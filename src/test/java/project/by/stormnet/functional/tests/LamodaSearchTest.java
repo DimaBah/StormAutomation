@@ -1,6 +1,7 @@
 package project.by.stormnet.functional.tests;
 
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import project.by.stormnet.functional.entities.helpers.HomeHelper;
@@ -12,6 +13,19 @@ public class LamodaSearchTest {
     @Test
     public void performSearch(){
         int countPerPage = homeHelper.search(searchKey).getSearchResultsCountPerPage();
+        Assert.assertTrue(countPerPage>0, "no results were found");
+    }
+
+    @Test
+    public void ballSearch(){
+        int countPerPage = homeHelper.search("ball").getSearchResultsCountPerPage();
+        Assert.assertTrue(countPerPage>0, "no results were found");
+        throw new SkipException("Skipping this exception");
+    }
+
+    @Test
+    public void zqqqSearch(){
+        int countPerPage = homeHelper.search("qqq").getSearchResultsCountPerPage();
         Assert.assertTrue(countPerPage>0, "no results were found");
     }
 
