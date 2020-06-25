@@ -5,13 +5,13 @@
     </listeners>
     <test verbose="2" name="Search test">
         <classes>
-<!--            <class name="project.by.stormnet.functional.tests.LamodaSearchTest"/>-->
+            <class name="project.by.stormnet.functional.tests.LamodaSearchTest"/>
 <!--            <class name="project.by.stormnet.functional.tests.onliner_tests.OnlinerSearchTest"/>-->
         </classes>
     </test>
-    <test name="Onliner testing">
-        <classes>
-            <class name="project.by.stormnet.functional.tests.onliner_tests.OnlinerSearchTest"/>
-        </classes>
-    </test>
+<!--    <test name="Onliner testing">-->
+<!--        <classes>-->
+<!--            <class name="project.by.stormnet.functional.tests.onliner_tests.OnlinerSearchTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
