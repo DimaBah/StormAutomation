@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,6 +23,10 @@ public class AbstractPage extends FrameworkCore {
     public void openUrl (String url){
         driver.manage().window().maximize();
         driver.get(url);
+    }
+
+    public void clearData(){
+        driver.manage().deleteAllCookies();
     }
 
     public void wait(int mlsecs) throws InterruptedException {
@@ -76,6 +81,20 @@ public class AbstractPage extends FrameworkCore {
 
     public List<WebElement> getElements (String xpath){
         return driver.findElements(By.xpath(xpath));
+    }
+
+    public void moveToMenu(String menuLink, String submenuLink){
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(getElement(menuLink));
+        waitForElementVisible(getElementBy(submenuLink));
+        actions.moveToElement(getElement(submenuLink));
+        actions.click().build().perform();
+    }
+
+    public void moveToEl(String element){
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(getElement(element));
+        actions.perform();
     }
 
 

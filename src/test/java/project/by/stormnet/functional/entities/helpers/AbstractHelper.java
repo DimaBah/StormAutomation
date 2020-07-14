@@ -6,6 +6,7 @@ public class AbstractHelper {
     AbstractPage abstractPage = new AbstractPage();
 
     public void quit(){
+        abstractPage.clearData();
         abstractPage.getDriver().quit();
     }
 }

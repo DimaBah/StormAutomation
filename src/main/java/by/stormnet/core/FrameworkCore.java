@@ -11,6 +11,7 @@ public class FrameworkCore {
     public static String browser = IOUtils.loadGenericProperty("browser", "configuration");
     public static String baseUrl = IOUtils.loadGenericProperty("baseUrl", "configuration");
     public static String onlinerUrl = IOUtils.loadGenericProperty("onlinerUrl", "configuration");
+    public static String googleUrl = IOUtils.loadGenericProperty("googleUrl", "configuration");
 
     public static WebDriver getInstance(){
         if(browser.equals(BrowserConstants.CHROME)){

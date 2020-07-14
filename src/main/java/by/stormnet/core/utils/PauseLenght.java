@@ -2,8 +2,8 @@ package by.stormnet.core.utils;
 
 public enum PauseLenght {
     MAX(5),
-    AVG(5),
-    MIN(5);
+    AVG(2),
+    MIN(1);
 
 
     private Integer value;
